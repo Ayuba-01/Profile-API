@@ -22,4 +22,4 @@ class IsOwnerOrAuthenticatedReadOnly(permissions.BasePermission):
             return True
 
         # Allow write access only to the owner of the object
-        return obj.owner == request.user
+        return obj.id == request.user.id
